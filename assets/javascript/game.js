@@ -1,3 +1,44 @@
+$(document).ready(function() {
+
+const pikachu = $("#pikaSelect");
+const pHealth = $('.pikaHealth');
+const pPower = $('.pikaPower');
+
+const squirtle = $('#squirtSelect');
+const sHealth = $('.squirtHealth');
+const sPower = $('.squirtPower')
+
+const char = $("#charSelect");
+const cHealth = $('.charHealth');
+const cPower = $('.charPower');
+
+const bulb = $("#bulbSelect");
+const bHealth = $('.bulbHealth');
+const bPower = $('.bulbpower');
+
+let pika = {
+    health: 20,
+    power: 20
+}
+let squirt = {
+    health: 20,
+    power: 20
+}
+let charmander = {
+    health: 20,
+    power: 20
+}
+let bulbasaur = {
+    health: 20,
+    power: 20
+}
+
+pHealth.text(pika.health)
+sHealth.text(squirt.health)
+cHealth.text(charmander.health)
+bHealth.text(bulbasaur.health)
+
+
 //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
 
 
@@ -27,3 +68,4 @@
 //* When the defender's `HP` is reduced to zero or below, remove the enemy from the `defender area`. The player character can now choose a new opponent.
 
 //4. The player wins the game by defeating all enemy characters. The player loses the game the game if their character's `HP` falls to zero or below.
+});

@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
-const pikachu = $("#pikaSelect");
+const pikachu = $(".pikaDiv");
 const pHealth = $('.pikaHealth');
 const pPower = $('.pikaPower');
 
-const squirtle = $('#squirtSelect');
+const squirtle = $('.squirtDiv');
 const sHealth = $('.squirtHealth');
 const sPower = $('.squirtPower')
 
-const char = $("#charSelect");
+const char = $(".charDiv");
 const cHealth = $('.charHealth');
 const cPower = $('.charPower');
 
-const bulb = $("#bulbSelect");
+const bulb = $(".bulbDiv");
 const bHealth = $('.bulbHealth');
 const bPower = $('.bulbPower');
 

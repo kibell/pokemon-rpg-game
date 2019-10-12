@@ -48,12 +48,15 @@ sPower.text("Poke-Power " + squirt.power);
 //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
 
     $(".pikaBtn").on('click',function() {
-        bulb.css({float: "right", clear: "both"});
-        char.css({float: "right", clear: "both"});
-        squirtle.css({float: "right", clear: "both"});
+        pikachu.css({float: "right", clear: "both"})
+        bulb.css({float: "left", clear: "both"});
+        char.css({float: "left", clear: "both" , });
+        squirtle.css({float: "left", clear: "both"});
+        document.getElementById("pikaSelect").src="./assets/images/PikaBattle.png";
         $('.charBtn').hide();
         $('.bulbBtn').hide();
         $('.squirtleBtn').hide();
+        $('.pikaBtn').text("Thunder!");
     });
 
         
@@ -61,19 +64,42 @@ sPower.text("Poke-Power " + squirt.power);
 
 
     $(".squirtleBtn").click(function(squirtStart){
-        alert("squirt")
+        pikachu.css({float: "rleft", clear: "both"})
+        bulb.css({float: "left", clear: "both"});
+        char.css({float: "left", clear: "both" , });
+        squirtle.css({float: "right", clear: "both"});
+        document.getElementById("squirtSelect").src="./assets/images/SqirtleBattle.png";
+        $('.charBtn').hide();
+        $('.bulbBtn').hide();
+        $('.pikaBtn').hide();
+        $('.squirtleBtn').text("Water Gun!");
   });
 
 
 
   $(".charBtn").click(function(charStart){
-    alert("char")
-
+    pikachu.css({float: "left", clear: "both"})
+    bulb.css({float: "left", clear: "both"});
+    char.css({float: "right", clear: "both" , });
+    squirtle.css({float: "left", clear: "both"});
+    document.getElementById("charSelect").src="./assets/images/CharBattle.png";
+    $('.pikaBtn').hide();
+    $('.bulbBtn').hide();
+    $('.squirtleBtn').hide();
+    $('.charBtn').text("Ember!");
 
 
 });
-$(".bulbaBtn").click(function(bulbStart){
-    alert("bulb")
+$(".bulbBtn").click(function(bulbStart){
+    pikachu.css({float: "left", clear: "both"})
+    bulb.css({float: "right", clear: "both"});
+    char.css({float: "left", clear: "both" , });
+    squirtle.css({float: "left", clear: "both"});
+    document.getElementById("bulbSelect").src="./assets/images/Bulbasaurbattle.png";
+    $('.charBtn').hide();
+    $('.pikaBtn').hide();
+    $('.squirtleBtn').hide();
+    $('.bulbBtn').text("Vine Whip");
 });
 
 

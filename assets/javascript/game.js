@@ -47,10 +47,16 @@ sPower.text("Poke-Power " + squirt.power);
 
 //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
 
-    $(".pikaBtn").click(function(pikaStart){
-          alert("pika")
+    $(".pikaBtn").on('click',function() {
+        bulb.css({float: "right", clear: "both"});
+        char.css({float: "right", clear: "both"});
+        squirtle.css({float: "right", clear: "both"});
+        $('.charBtn').hide();
+        $('.bulbBtn').hide();
+        $('.squirtleBtn').hide();
     });
 
+        
 
 
 

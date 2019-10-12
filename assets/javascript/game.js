@@ -47,6 +47,28 @@ sPower.text("Poke-Power " + squirt.power);
 
 //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
 
+    $(".pikaBtn").click(function(pikaStart){
+          alert("pika")
+    });
+
+
+
+
+    $(".squirtleBtn").click(function(squirtStart){
+        alert("squirt")
+  });
+
+
+
+  $(".charBtn").click(function(charStart){
+    alert("char")
+
+
+
+});
+$(".bulbaBtn").click(function(bulbStart){
+    alert("bulb")
+});
 
 
 //* The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.

@@ -1,3 +1,9 @@
+body{
+     background: linear-gradient(to right, #44aaa5,#223344 ) 
+    
+}
+
+
 img{
     width: 200px;
 }
@@ -5,4 +11,9 @@ img{
 #bulbSelect
 {
     height: 200px;
+}
+
+.startBattle{
+    display: flex;
+    float: right;
 }

@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+ const audioElement = document.getElementById("myaudio");
+    
+
 const pikachu = $(".pikaDiv");
 const pHealth = $('.pikaHealth');
 const pPower = $('.pikaPower');
@@ -42,12 +45,15 @@ pPower.text("Poke-Power " + pika.power);
 cPower.text("Poke-Power " + charmander.power);
 bPower.text("Poke-Power " + bulbasaur.power);
 sPower.text("Poke-Power " + squirt.power);
-
-
+        $('.charBtn').hide();
+        $('.bulbBtn').hide();
+        $('.pikaBtn').hide();
+        $('.squirtleBtn').hide();
+        $('.startBattle').hide();
 
 //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
 
-    $(".pikaBtn").on('click',function() {
+    $("#pikaSelect").on('click',function() {
         pikachu.css({float: "right", clear: "both"})
         bulb.css({float: "left", clear: "both"});
         char.css({float: "left", clear: "both" , });
@@ -57,27 +63,29 @@ sPower.text("Poke-Power " + squirt.power);
         $('.bulbBtn').hide();
         $('.squirtleBtn').hide();
         $('.pikaBtn').text("Thunder!");
+        $('.startBattle').show();
+        audioElement.play();
     });
 
         
 
 
 
-    $(".squirtleBtn").click(function(squirtStart){
-        pikachu.css({float: "rleft", clear: "both"})
+    $("#squirtSelect").click(function(squirtStart){
+        pikachu.css({float: "left", clear: "both"})
         bulb.css({float: "left", clear: "both"});
         char.css({float: "left", clear: "both" , });
         squirtle.css({float: "right", clear: "both"});
         document.getElementById("squirtSelect").src="./assets/images/SqirtleBattle.png";
-        $('.charBtn').hide();
-        $('.bulbBtn').hide();
-        $('.pikaBtn').hide();
+        
         $('.squirtleBtn').text("Water Gun!");
+        $('.startBattle').show();
+        audioElement.play();
   });
 
 
 
-  $(".charBtn").click(function(charStart){
+  $("#charSelect").click(function(charStart){
     pikachu.css({float: "left", clear: "both"})
     bulb.css({float: "left", clear: "both"});
     char.css({float: "right", clear: "both" , });
@@ -87,10 +95,11 @@ sPower.text("Poke-Power " + squirt.power);
     $('.bulbBtn').hide();
     $('.squirtleBtn').hide();
     $('.charBtn').text("Ember!");
-
+    $('.startBattle').show();
+    audioElement.play();
 
 });
-$(".bulbBtn").click(function(bulbStart){
+$("#bulbSelect").click(function(bulbStart){
     pikachu.css({float: "left", clear: "both"})
     bulb.css({float: "right", clear: "both"});
     char.css({float: "left", clear: "both" , });
@@ -100,6 +109,8 @@ $(".bulbBtn").click(function(bulbStart){
     $('.pikaBtn').hide();
     $('.squirtleBtn').hide();
     $('.bulbBtn').text("Vine Whip");
+    $('.startBattle').show();
+    audioElement.play();
 });
 
 

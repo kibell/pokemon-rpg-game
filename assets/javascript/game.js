@@ -14,29 +14,35 @@ const cPower = $('.charPower');
 
 const bulb = $("#bulbSelect");
 const bHealth = $('.bulbHealth');
-const bPower = $('.bulbpower');
+const bPower = $('.bulbPower');
 
 let pika = {
-    health: 20,
-    power: 20
+    health: 130,
+    power: 40
 }
 let squirt = {
-    health: 20,
-    power: 20
+    health: 120,
+    power: 45
 }
 let charmander = {
-    health: 20,
-    power: 20
+    health: 110,
+    power: 50
 }
 let bulbasaur = {
-    health: 20,
-    power: 20
+    health: 140,
+    power: 35
 }
 
-pHealth.text(pika.health)
-sHealth.text(squirt.health)
-cHealth.text(charmander.health)
-bHealth.text(bulbasaur.health)
+pHealth.text("Health " + pika.health);
+sHealth.text("Health " + squirt.health);
+cHealth.text("Health " + charmander.health);
+bHealth.text("Health " + bulbasaur.health);
+
+pPower.text("Poke-Power " + pika.power);
+cPower.text("Poke-Power " + charmander.power);
+bPower.text("Poke-Power " + bulbasaur.power);
+sPower.text("Poke-Power " + squirt.power);
+
 
 
 //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.

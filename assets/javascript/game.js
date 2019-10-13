@@ -24,6 +24,11 @@ $(document).ready(function () {
             const bHealth = $('.bulbHealth');
             const bPower = $('.bulbPower');
 
+            let pks = 0;
+            let sqs = 0;
+            let chs = 0;
+            let bbs = 0;
+
 
             let pika = {
                 type: "lighting",
@@ -109,8 +114,7 @@ $(document).ready(function () {
 
 
             $("#squirtSelect").click(function () {
-                let pkpk = false;
-                let sqsq = true;
+               
                 pikachu.css({
                     float: "left",
                     clear: "both"
@@ -197,11 +201,12 @@ $(document).ready(function () {
             });
 
             function pikaStart(){
+               pks ++
                // $('.startBattle').show();
-                console.log('pika');
+                console.log(pks, sqs,bbs,chs);
 
                 $('.startBattle').on("click", function(){
-                    console.log("text");
+                    
                     
                 });
 
@@ -218,10 +223,12 @@ $(document).ready(function () {
             };
             
             function squirtStart(){
+                 sqs ++
+                console.log(pks, sqs,bbs,chs);
               //  $('.startBattle').show();
-                console.log('sq');
+                //console.log('sq');
                 $('.startBattle').on("click", function(){
-                    console.log("texsq");
+                    //console.log("texsq");
                  
                 });
                 $('#bulbSelect').off();
@@ -231,6 +238,8 @@ $(document).ready(function () {
             };
 
             function charStart(){
+                 chs ++
+                console.log(pks, sqs,bbs,chs);
                 // $('.startBattle').show();
                 console.log('char');
                 $('.startBattle').on("click", function(){
@@ -244,6 +253,8 @@ $(document).ready(function () {
 
             };
             function bulbStart(){
+                 bbs ++
+                console.log(pks, sqs,bbs,chs);
                 // $('.startBattle').show();
                 console.log('sbulb');
                 $('.startBattle').on("click", function(){
@@ -268,7 +279,8 @@ $(document).ready(function () {
                     $('.pikaBtn').off();
                     $('.bulbBtn').off();
                     $('.instructions').text("BATTLE!");
-
+                     chs ++;
+                    console.log(pks, sqs,bbs,chs);
                     
                 }
             });
@@ -284,7 +296,7 @@ $(document).ready(function () {
                          $('.charBtn').off();
                          $('.pikaBtn').off();
                          $('.instructions').text("BATTLE!");
-                    
+                    bbs ++;
                 }
             });
 
@@ -300,6 +312,7 @@ $(document).ready(function () {
                          $('.charBtn').off();
                          $('.bulbBtn').off();
                          $('.instructions').text("BATTLE!");
+                         sqs++;
                 }
             });
                 
@@ -315,7 +328,7 @@ $(document).ready(function () {
                          $('.charBtn').off();
                          $('.bulbBtn').off();
                          $('.instructions').text("BATTLE!");
-
+                       pks ++;
 
                 }
             });
@@ -324,7 +337,34 @@ $(document).ready(function () {
 
             
                 $(".startBattle").click(function(){
-                    //alert("hi");
+                   // console.log(pks,bbs)
+                  
+
+                   switch (pks){
+
+                        case 1:
+                            if(sqs === 1){
+                                console.log('sq vs pk')
+                            } else if (bbs === 1) {
+                                console.log('bb vs pk')
+                            } else {
+                                console.log('ok')
+                            };
+
+                
+                            
+                        break;
+
+                        case 0:
+                       
+                       
+                             console.log('bvp')
+                             break;
+
+
+
+                   }
+
 
 
              });

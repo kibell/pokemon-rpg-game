@@ -29,6 +29,9 @@ $(document).ready(function () {
             let chs = 0;
             let bbs = 0;
 
+            let printToScreen = () => {
+                charmander.health.text 
+            }
 
             let pika = {
                 type: "lighting",
@@ -194,7 +197,7 @@ $(document).ready(function () {
                 $('.charBtn').show();
                 $('.pikaBtn').show();
                 $('.squirtleBtn').show();
-                $('.bulbBtn').text("Vine Whip");
+                
                
                 audioElement.play();
                 bulbStart()
@@ -258,7 +261,7 @@ $(document).ready(function () {
                 // $('.startBattle').show();
                 console.log('sbulb');
                 $('.startBattle').on("click", function(){
-                    console.log("bulb");
+                 //   console.log("bulb");
                 });
 
                 $('#pikaSelect').off();
@@ -280,7 +283,7 @@ $(document).ready(function () {
                     $('.bulbBtn').off();
                     $('.instructions').text("BATTLE!");
                      chs ++;
-                    console.log(pks, sqs,bbs,chs);
+                   // console.log(pks, sqs,bbs,chs);
                     
                 }
             });
@@ -335,7 +338,7 @@ $(document).ready(function () {
 
 
 
-            
+            //This start of this code is set up for the different match up scenarios that can occur
                 $(".startBattle").click(function(){
                    // console.log(pks,bbs)
                   
@@ -349,6 +352,8 @@ $(document).ready(function () {
                                 console.log('bb vs pk')
                             } else {
                                 console.log('ch vs pk')
+                                $ ('.pikaBtn').show();
+                                pkVsCH();
                             };
 
                 
@@ -406,6 +411,36 @@ $(document).ready(function () {
 
              });
             
+            function pkVsCH(){
+            //    $ ('.pikaBtn').show;
+            //    $('.pikaBtn').text("Thunder Attack");
+            $('.pikaBtn').text("Thunder Attack");
+               $('.pikaBtn').click(function(){
+                
+               let pikaStrike = Math.floor(Math.random() * pika.power );
+                
+               charmander.health -= pikaStrike;
+               cHealth.text("Health " + charmander.health);
+               $ ('.pikaBtn').hide;
+               $('.instructions').text("Pikachu used Thunder and took " + pikaStrike)
+               $ ('.pikaBtn').off;
+               setTimeout(function(){
+                
+                
+            
+
+                let CharStrike = Math.floor(Math.random() * charmander.power );
+                pika.health -= CharStrike;
+                pHealth.text("Health " + pika.health);
+                $('.instructions').text("Charmander used Ember and took " + CharStrike)
+                
+               } ,1000)
+               $ ('.pikaBtn').on;
+
+               })};
+
+
+           
 
                         //* The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
 

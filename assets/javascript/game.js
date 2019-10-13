@@ -91,7 +91,7 @@ $(document).ready(function () {
                 $('.charBtn').show();
                 $('.bulbBtn').show();
                 $('.squirtleBtn').show();
-                $('.pikaBtn').show();
+               
                 //$('.startBattle').show();
                 //document.getElementById("myBtn").disabled = true;
                 //document.getElementById("myBtn").disabled = true;
@@ -124,8 +124,10 @@ $(document).ready(function () {
                     clear: "both"
                 });
                 document.getElementById("squirtSelect").src = "./assets/images/SqirtleBattle.png";
-
-                $('.squirtleBtn').text("Water Gun!");
+                $('.charBtn').show();
+                $('.bulbBtn').show();
+                $('.pikaBtn').show();
+               
                 $('.startBattle').hide();
                 audioElement.play();
                 squirtStart();
@@ -157,6 +159,9 @@ $(document).ready(function () {
                 $('.charBtn').text("Ember!");
                 $('.startBattle').show();
                 audioElement.play();
+                $('.pikaBtn').show();
+                $('.bulbBtn').show();
+                $('.squirtleBtn').show();
                 charStart()
 
             });
@@ -178,9 +183,9 @@ $(document).ready(function () {
                     clear: "both"
                 });
                 document.getElementById("bulbSelect").src = "./assets/images/Bulbasaurbattle.png";
-                $('.charBtn').hide();
-                $('.pikaBtn').hide();
-                $('.squirtleBtn').hide();
+                $('.charBtn').show();
+                $('.pikaBtn').show();
+                $('.squirtleBtn').show();
                 $('.bulbBtn').text("Vine Whip");
                
                 audioElement.play();
@@ -254,7 +259,27 @@ $(document).ready(function () {
                     alert("charrr");
                 }
             });
+
+            $(".bulbBtn").click(function(){
+                if( buttonclicked = true ) {
+                   
+                    alert("bulb");
+                }
+            });
+
+            $(".squirtleBtn").click(function(){
+                if( buttonclicked = true ) {
+                   
+                    alert("squirt");
+                }
+            });
                 
+            $(".pikaBtn").click(function(){
+                if( buttonclicked = true ) {
+                   
+                    alert("pika");
+                }
+            });
 
 
                         //* The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.

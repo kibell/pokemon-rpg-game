@@ -157,7 +157,7 @@ $(document).ready(function () {
                 $('.bulbBtn').hide();
                 $('.squirtleBtn').hide();
                 $('.charBtn').text("Ember!");
-                $('.startBattle').show();
+                
                 audioElement.play();
                 $('.pikaBtn').show();
                 $('.bulbBtn').show();
@@ -193,7 +193,7 @@ $(document).ready(function () {
             });
 
             function pikaStart(){
-                $('.startBattle').show();
+               // $('.startBattle').show();
                 console.log('pika');
 
                 $('.startBattle').on("click", function(){
@@ -214,7 +214,7 @@ $(document).ready(function () {
             };
             
             function squirtStart(){
-                $('.startBattle').show();
+              //  $('.startBattle').show();
                 console.log('sq');
                 $('.startBattle').on("click", function(){
                     console.log("texsq");
@@ -227,7 +227,7 @@ $(document).ready(function () {
             };
 
             function charStart(){
-                $('.startBattle').show();
+                // $('.startBattle').show();
                 console.log('char');
                 $('.startBattle').on("click", function(){
                     console.log("char");
@@ -240,7 +240,7 @@ $(document).ready(function () {
 
             };
             function bulbStart(){
-                $('.startBattle').show();
+                // $('.startBattle').show();
                 console.log('sbulb');
                 $('.startBattle').on("click", function(){
                     console.log("bulb");
@@ -255,29 +255,61 @@ $(document).ready(function () {
 
             $("#charBtn3").click(function(){
                 if( buttonclicked = true ) {
-                   
-                    alert("charrr");
+                   ch.css({
+                       
+                    border: "solid red"
+                   })
+                   $('.startBattle').show();
+                   $('.squirtBtn').off();
+                    $('.pikaBtn').off();
+                    $('.bulbBtn').off();
+
+
+                    
                 }
             });
 
             $(".bulbBtn").click(function(){
                 if( buttonclicked = true ) {
-                   
-                    alert("bulb");
+                    bb.css({
+                       
+                        border: "solid green"
+                       })
+                       $('.startBattle').show();
+                       $('.squirtBtn').off();
+                         $('.charBtn').off();
+                         $('.pikaBtn').off();
+                    
                 }
             });
 
             $(".squirtleBtn").click(function(){
                 if( buttonclicked = true ) {
                    
-                    alert("squirt");
+                    sq.css({
+                       
+                        border: "solid aqua"
+                       })
+                       $('.startBattle').show();
+                       $('.pikaBtn').off();
+                         $('.charBtn').off();
+                         $('.bulbBtn').off();
                 }
             });
                 
             $(".pikaBtn").click(function(){
                 if( buttonclicked = true ) {
                    
-                    alert("pika");
+                    pk.css({
+                       
+                        border: "solid brown"
+                       })
+                       $('.startBattle').show();
+                       $('.squirtBtn').off();
+                         $('.charBtn').off();
+                         $('.bulbBtn').off();
+
+
                 }
             });
 

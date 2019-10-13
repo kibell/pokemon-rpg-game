@@ -84,14 +84,14 @@ $(document).ready(function () {
                     clear: "both",
                 });
                 squirtle.css({
-                    float: "left",
+                    float: "left",  
                     clear: "both"
                 });
                 document.getElementById("pikaSelect").src = "./assets/images/PikaBattle.png";
-                $('.charBtn').hide();
-                $('.bulbBtn').hide();
-                $('.squirtleBtn').hide();
-
+                $('.charBtn').show();
+                $('.bulbBtn').show();
+                $('.squirtleBtn').show();
+                $('.pikaBtn').show();
                 //$('.startBattle').show();
                 //document.getElementById("myBtn").disabled = true;
                 //document.getElementById("myBtn").disabled = true;
@@ -199,7 +199,13 @@ $(document).ready(function () {
                 $('#bulbSelect').off();
                 $('#charSelect').off();
                 $('#squirtSelect').off();
+                $('.instructions').text("Choose you Opponent!");
+                $('.charBtn').show;
 
+               
+                
+
+                
             };
             
             function squirtStart(){
@@ -212,6 +218,7 @@ $(document).ready(function () {
                 $('#bulbSelect').off();
                 $('#pikaSelect').off();
                 $('#charSelect').off();
+                $('.instructions').text("Choose you Opponent!");
             };
 
             function charStart(){
@@ -224,6 +231,7 @@ $(document).ready(function () {
                 $('#bulbSelect').off();
                 $('#pikaSelect').off();
                 $('#squirtSelect').off();
+                $('.instructions').text("Choose you Opponent!");
 
             };
             function bulbStart(){
@@ -236,10 +244,16 @@ $(document).ready(function () {
                 $('#pikaSelect').off();
                 $('#charSelect').off();
                 $('#squirtSelect').off();
+                $('.instructions').text("Choose you Opponent!");
 
             };
 
-
+            $("#charBtn3").click(function(){
+                if( buttonclicked = true ) {
+                   
+                    alert("charrr");
+                }
+            });
                 
 
 

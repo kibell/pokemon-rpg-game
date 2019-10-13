@@ -1,142 +1,246 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
- const audioElement = document.getElementById("myaudio");
-    
+            const audioElement = document.getElementById("myaudio");
+            const audioPika = document.getElementById("audiopika");
 
-const pikachu = $(".pikaDiv");
-const pHealth = $('.pikaHealth');
-const pPower = $('.pikaPower');
+            const pk = $("#pikaSelect");
+            const sq = $("#squirtSelect");
+            const ch = $("#charSelect");
+            const bb = $("#bulbSelect");
 
-const squirtle = $('.squirtDiv');
-const sHealth = $('.squirtHealth');
-const sPower = $('.squirtPower')
+            const pikachu = $(".pikaDiv");
+            const pHealth = $('.pikaHealth');
+            const pPower = $('.pikaPower');
 
-const char = $(".charDiv");
-const cHealth = $('.charHealth');
-const cPower = $('.charPower');
+            const squirtle = $('.squirtDiv');
+            const sHealth = $('.squirtHealth');
+            const sPower = $('.squirtPower')
 
-const bulb = $(".bulbDiv");
-const bHealth = $('.bulbHealth');
-const bPower = $('.bulbPower');
+            const char = $(".charDiv");
+            const cHealth = $('.charHealth');
+            const cPower = $('.charPower');
 
-let pika = {
-    health: 130,
-    power: 40
-}
-let squirt = {
-    health: 120,
-    power: 45
-}
-let charmander = {
-    health: 110,
-    power: 50
-}
-let bulbasaur = {
-    health: 140,
-    power: 35
-}
-
-pHealth.text("Health " + pika.health);
-sHealth.text("Health " + squirt.health);
-cHealth.text("Health " + charmander.health);
-bHealth.text("Health " + bulbasaur.health);
-
-pPower.text("Poke-Power " + pika.power);
-cPower.text("Poke-Power " + charmander.power);
-bPower.text("Poke-Power " + bulbasaur.power);
-sPower.text("Poke-Power " + squirt.power);
-        $('.charBtn').hide();
-        $('.bulbBtn').hide();
-        $('.pikaBtn').hide();
-        $('.squirtleBtn').hide();
-        $('.startBattle').hide();
-
-//When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
-
-    $("#pikaSelect").on('click',function() {
-        pikachu.css({float: "right", clear: "both"})
-        bulb.css({float: "left", clear: "both"});
-        char.css({float: "left", clear: "both" , });
-        squirtle.css({float: "left", clear: "both"});
-        document.getElementById("pikaSelect").src="./assets/images/PikaBattle.png";
-        $('.charBtn').hide();
-        $('.bulbBtn').hide();
-        $('.squirtleBtn').hide();
-        $('.pikaBtn').text("Thunder!");
-        $('.startBattle').show();
-        audioElement.play();
-    });
-
-        
+            const bulb = $(".bulbDiv");
+            const bHealth = $('.bulbHealth');
+            const bPower = $('.bulbPower');
 
 
+            let pika = {
+                health: 130,
+                power: 40
+            }
+            let squirt = {
+                health: 120,
+                power: 45
+            }
+            let charmander = {
+                health: 110,
+                power: 50
+            }
+            let bulbasaur = {
+                health: 140,
+                power: 35
+            }
 
-    $("#squirtSelect").click(function(squirtStart){
-        pikachu.css({float: "left", clear: "both"})
-        bulb.css({float: "left", clear: "both"});
-        char.css({float: "left", clear: "both" , });
-        squirtle.css({float: "right", clear: "both"});
-        document.getElementById("squirtSelect").src="./assets/images/SqirtleBattle.png";
-        
-        $('.squirtleBtn').text("Water Gun!");
-        $('.startBattle').show();
-        audioElement.play();
-  });
+          
+
+            pHealth.text("Health " + pika.health);
+            sHealth.text("Health " + squirt.health);
+            cHealth.text("Health " + charmander.health);
+            bHealth.text("Health " + bulbasaur.health);
+
+            pPower.text("Poke-Power " + pika.power);
+            cPower.text("Poke-Power " + charmander.power);
+            bPower.text("Poke-Power " + bulbasaur.power);
+            sPower.text("Poke-Power " + squirt.power);
+            $('.charBtn').hide();
+            $('.bulbBtn').hide();
+            $('.pikaBtn').hide();
+            $('.squirtleBtn').hide();
+            $('.startBattle').hide();
+
+            $('.active').on('click', function () {
+                audioElement.play();
+            });
+
+            $('.pause').on('click', function () {
+                audioElement.pause();
+            });
+            //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
+
+            $("#pikaSelect").on('click', function () {
 
 
+                pikachu.css({
+                    float: "right",
+                    clear: "both"
+                });
+                bulb.css({
+                    float: "left",
+                    clear: "both"
+                });
+                char.css({
+                    float: "left",
+                    clear: "both",
+                });
+                squirtle.css({
+                    float: "left",
+                    clear: "both"
+                });
+                document.getElementById("pikaSelect").src = "./assets/images/PikaBattle.png";
+                $('.charBtn').hide();
+                $('.bulbBtn').hide();
+                $('.squirtleBtn').hide();
 
-  $("#charSelect").click(function(charStart){
-    pikachu.css({float: "left", clear: "both"})
-    bulb.css({float: "left", clear: "both"});
-    char.css({float: "right", clear: "both" , });
-    squirtle.css({float: "left", clear: "both"});
-    document.getElementById("charSelect").src="./assets/images/CharBattle.png";
-    $('.pikaBtn').hide();
-    $('.bulbBtn').hide();
-    $('.squirtleBtn').hide();
-    $('.charBtn').text("Ember!");
-    $('.startBattle').show();
-    audioElement.play();
-
-});
-$("#bulbSelect").click(function(bulbStart){
-    pikachu.css({float: "left", clear: "both"})
-    bulb.css({float: "right", clear: "both"});
-    char.css({float: "left", clear: "both" , });
-    squirtle.css({float: "left", clear: "both"});
-    document.getElementById("bulbSelect").src="./assets/images/Bulbasaurbattle.png";
-    $('.charBtn').hide();
-    $('.pikaBtn').hide();
-    $('.squirtleBtn').hide();
-    $('.bulbBtn').text("Vine Whip");
-    $('.startBattle').show();
-    audioElement.play();
-});
-
-
-//* The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
+                //$('.startBattle').show();
+                //document.getElementById("myBtn").disabled = true;
+                //document.getElementById("myBtn").disabled = true;
+                audioPika.play();
+                audioElement.play();
+                pikaStart();
+            });
 
 
 
-// The player chooses an opponent by clicking on an enemy's picture.
+
+
+            $("#squirtSelect").click(function () {
+                let pkpk = false;
+                let sqsq = true;
+                pikachu.css({
+                    float: "left",
+                    clear: "both"
+                })
+                bulb.css({
+                    float: "left",
+                    clear: "both"
+                });
+                char.css({
+                    float: "left",
+                    clear: "both",
+                });
+                squirtle.css({
+                    float: "right",
+                    clear: "both"
+                });
+                document.getElementById("squirtSelect").src = "./assets/images/SqirtleBattle.png";
+
+                $('.squirtleBtn').text("Water Gun!");
+                $('.startBattle').hide();
+                audioElement.play();
+                squirtStart();
+            });
 
 
 
-//* Once the player selects an opponent, that enemy is moved to a `defender area`.
+            $("#charSelect").click(function () {
+                pikachu.css({
+                    float: "left",
+                    clear: "both"
+                })
+                bulb.css({
+                    float: "left",
+                    clear: "both"
+                });
+                char.css({
+                    float: "right",
+                    clear: "both",
+                });
+                squirtle.css({
+                    float: "left",
+                    clear: "both"
+                });
+                document.getElementById("charSelect").src = "./assets/images/CharBattle.png";
+                $('.pikaBtn').hide();
+                $('.bulbBtn').hide();
+                $('.squirtleBtn').hide();
+                $('.charBtn').text("Ember!");
+                $('.startBattle').show();
+                audioElement.play();
+                charStart()
+
+            });
+            $("#bulbSelect").click(function () {
+                pikachu.css({
+                    float: "left",
+                    clear: "both"
+                })
+                bulb.css({
+                    float: "right",
+                    clear: "both"
+                });
+                char.css({
+                    float: "left",
+                    clear: "both",
+                });
+                squirtle.css({
+                    float: "left",
+                    clear: "both"
+                });
+                document.getElementById("bulbSelect").src = "./assets/images/Bulbasaurbattle.png";
+                $('.charBtn').hide();
+                $('.pikaBtn').hide();
+                $('.squirtleBtn').hide();
+                $('.bulbBtn').text("Vine Whip");
+               
+                audioElement.play();
+                bulbStart()
+            });
+
+            function pikaStart(){
+                $('.startBattle').show();
+                console.log('pika');
+
+                $('.startBattle').on("click", function(){
+                    console.log("text");
+                });
+
+            };
+            
+            function squirtStart(){
+                $('.startBattle').show();
+                console.log('sq');
+
+            };
+
+            function charStart(){
+                $('.startBattle').show();
+                console.log('char');
+
+            };
+            function bulbStart(){
+                $('.startBattle').show();
+                console.log('sbulb');
+
+            };
+
+
+                
+
+
+                        //* The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
 
 
 
-//* The player will now be able to click the `attack` button.
+                        // The player chooses an opponent by clicking on an enemy's picture.
 
 
-  //* Whenever the player clicks `attack`, their character damages the defender. The opponent will lose `HP` (health points). These points are displayed at the bottom of the defender's picture. 
+
+                        //* Once the player selects an opponent, that enemy is moved to a `defender area`.
 
 
-  //* The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their `HP`. These points are shown at the bottom of the player character's picture.
 
-//3. The player will keep hitting the attack button in an effort to defeat their opponent.
+                        //* The player will now be able to click the `attack` button.
 
-//* When the defender's `HP` is reduced to zero or below, remove the enemy from the `defender area`. The player character can now choose a new opponent.
 
-//4. The player wins the game by defeating all enemy characters. The player loses the game the game if their character's `HP` falls to zero or below.
-});
+                        //* Whenever the player clicks `attack`, their character damages the defender. The opponent will lose `HP` (health points). These points are displayed at the bottom of the defender's picture. 
+
+
+                        //* The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their `HP`. These points are shown at the bottom of the player character's picture.
+
+                        //3. The player will keep hitting the attack button in an effort to defeat their opponent.
+
+                        //* When the defender's `HP` is reduced to zero or below, remove the enemy from the `defender area`. The player character can now choose a new opponent.
+
+                        //4. The player wins the game by defeating all enemy characters. The player loses the game the game if their character's `HP` falls to zero or below.
+                    });

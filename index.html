@@ -13,6 +13,9 @@
 <audio id = "myaudio">
     <source src = "sounds/101-opening.mp3">
 </audio>
+<audio id = "audiopika">
+  <source src = "sounds/025 - Kanto - Pikachu.mp3">
+</audio>
         <div class="jumbotron">
                 <h1 class="display-4">Pokemon RPG</h1>
                 <p >This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
@@ -21,10 +24,19 @@
                 
                 
               </div>
-
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                      <input type="radio" name="options" id="option1" autocomplete="off" checked> Play Music
+                    </label>
+                    <label class="btn btn-secondary pause">
+                      <input type="radio" name="options" id="option2" autocomplete="off"> Pause Music
+                    </label>
+                    
+                  </div>
 
     <div class="container">
 
+      <h2 class="instructions">Choose your pokemon!</h2>
     
 
       <div  class="pikaDiv col-md-2">
@@ -41,7 +53,7 @@
 
     
 
-        <div  class="col-md-2 squirtDiv">
+        <div id="squirtDiv" class="col-md-2 squirtDiv">
     <img id ="squirtSelect"  src="./assets/images/sSelect.png ">
     <br>
     <button type="button" class="btn btn-primary squirtleBtn" onclick="()">SQUIRTLE</button>

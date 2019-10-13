@@ -4,16 +4,40 @@ body{
 }
 
 
+h2{
+    text-align: center;
+}
+
 img{
-    width: 200px;
+    width: 100px;
 }
 
 #bulbSelect
 {
-    height: 200px;
+    height: 100px;
 }
 
 .startBattle{
     display: flex;
     float: right;
+}
+
+#pikaSelect:hover{
+    background: yellow;
+    border-radius: 50%;
+}
+
+#squirtSelect:hover{
+    background: blue;
+    border-radius: 50%;
+}
+
+#charSelect:hover{
+    background: orange;
+    border-radius: 50%;
+}
+
+#bulbSelect:hover{
+    background: yellowgreen;
+    border-radius: 50%;
 }

@@ -241,7 +241,7 @@ $(document).ready(function () {
                  chs ++
                 console.log(pks, sqs,bbs,chs);
                 // $('.startBattle').show();
-                console.log('char');
+                //console.log('char');
                 $('.startBattle').on("click", function(){
                     console.log("char");
                 });
@@ -348,7 +348,7 @@ $(document).ready(function () {
                             } else if (bbs === 1) {
                                 console.log('bb vs pk')
                             } else {
-                                console.log('ok')
+                                console.log('ch vs pk')
                             };
 
                 
@@ -356,14 +356,51 @@ $(document).ready(function () {
                         break;
 
                         case 0:
-                       
-                       
-                             console.log('bvp')
-                             break;
+                     switch(sqs){
+
+                        case 1:
+                                if(pks === 1){
+                                    console.log('sq vs pk')
+                                } else if (bbs === 1) {
+                                    console.log('bb vs sq')
+                                } else {
+                                    console.log('ch vs sq')
+                                };
+                                break;
 
 
+                        case 0:
+                            
+                            switch(bbs){
 
-                   }
+                                case 1:
+                                        if(pks === 1){
+                                            console.log('bb vs pk')
+                                        } else if (sqs === 1) {
+                                            console.log('bb vs sq')
+                                        } else {
+                                            console.log('ch vs sq')
+                                        };
+                                        break;
+
+                                case 0:
+                                        switch(chs){
+
+                                            case 1:
+                                                    if(pks === 1){
+                                                        console.log('chs vs pk')
+                                                    } else if (sqs === 1) {
+                                                        console.log('chs vs sq')
+                                                    } else {
+                                                        console.log('ch vs bb')
+                                                    };
+                                                };
+
+                                        
+
+                                
+                             
+                   }}};
 
 
 

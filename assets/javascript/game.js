@@ -26,18 +26,22 @@ $(document).ready(function () {
 
 
             let pika = {
+                type: "lighting",
                 health: 130,
                 power: 40
             }
             let squirt = {
+                type: "water",
                 health: 120,
                 power: 45
             }
             let charmander = {
+                type: "fire",
                 health: 110,
                 power: 50
             }
             let bulbasaur = {
+                type: "grass",
                 health: 140,
                 power: 35
             }
@@ -263,7 +267,7 @@ $(document).ready(function () {
                    $('.squirtBtn').off();
                     $('.pikaBtn').off();
                     $('.bulbBtn').off();
-
+                    $('.instructions').text("BATTLE!");
 
                     
                 }
@@ -279,6 +283,7 @@ $(document).ready(function () {
                        $('.squirtBtn').off();
                          $('.charBtn').off();
                          $('.pikaBtn').off();
+                         $('.instructions').text("BATTLE!");
                     
                 }
             });
@@ -294,6 +299,7 @@ $(document).ready(function () {
                        $('.pikaBtn').off();
                          $('.charBtn').off();
                          $('.bulbBtn').off();
+                         $('.instructions').text("BATTLE!");
                 }
             });
                 
@@ -308,11 +314,21 @@ $(document).ready(function () {
                        $('.squirtBtn').off();
                          $('.charBtn').off();
                          $('.bulbBtn').off();
+                         $('.instructions').text("BATTLE!");
 
 
                 }
             });
 
+
+
+            
+                $(".startBattle").click(function(){
+                    //alert("hi");
+
+
+             });
+            
 
                         //* The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
 

@@ -36,7 +36,7 @@ $(document).ready(function () {
             let pika = {
                 type: "lighting",
                 health: 130,
-                power: 40
+                power: 140
             }
             let squirt = {
                 type: "water",
@@ -271,7 +271,7 @@ $(document).ready(function () {
 
             };
 
-            $("#charBtn3").click(function(){
+            $(".charBtn").click(function(){
                 if( buttonclicked = true ) {
                    ch.css({
                        
@@ -346,60 +346,66 @@ $(document).ready(function () {
                    switch (pks){
 
                         case 1:
-                            if(sqs === 1){
+                            if(chs === 1){
                                 console.log('sq vs pk')
+                                $ ('.pikaBtn').show();
+                                
+                                pkVsCH();
                             } else if (bbs === 1) {
                                 console.log('bb vs pk')
-                            } else {
+                                $ ('.pikaBtn').show();
+
+                                pkVsBb();
+                            } else if (sqs ===1) {
                                 console.log('ch vs pk')
                                 $ ('.pikaBtn').show();
-                                pkVsCH();
-                            };
+                                pkVsSq();
+                            } else {};
 
                 
                             
                         break;
 
-                        case 0:
-                     switch(sqs){
+                    //     case 0:
+                    //  switch(sqs){
 
-                        case 1:
-                                if(pks === 1){
-                                    console.log('sq vs pk')
-                                } else if (bbs === 1) {
-                                    console.log('bb vs sq')
-                                } else {
-                                    console.log('ch vs sq')
-                                };
-                                break;
+                    //     case 1:
+                    //             if(pks === 1){
+                    //                 console.log('sq vs pk')
+                    //             } else if (bbs === 1) {
+                    //                 console.log('bb vs sq')
+                    //             } else {
+                    //                 console.log('ch vs sq')
+                    //             };
+                    //             break;
 
 
-                        case 0:
+                    //     case 0:
                             
-                            switch(bbs){
+                    //         switch(bbs){
 
-                                case 1:
-                                        if(pks === 1){
-                                            console.log('bb vs pk')
-                                        } else if (sqs === 1) {
-                                            console.log('bb vs sq')
-                                        } else {
-                                            console.log('ch vs sq')
-                                        };
-                                        break;
+                    //             case 1:
+                    //                     if(pks === 1){
+                    //                         console.log('bb vs pk')
+                    //                     } else if (sqs === 1) {
+                    //                         console.log('bb vs sq')
+                    //                     } else {
+                    //                         console.log('ch vs sq')
+                    //                     };
+                    //                     break;
 
-                                case 0:
-                                        switch(chs){
+                    //             case 0:
+                    //                     switch(chs){
 
-                                            case 1:
-                                                    if(pks === 1){
-                                                        console.log('chs vs pk')
-                                                    } else if (sqs === 1) {
-                                                        console.log('chs vs sq')
-                                                    } else {
-                                                        console.log('ch vs bb')
-                                                    };
-                                                };
+                    //                         case 1:
+                    //                                 if(pks === 1){
+                    //                                     console.log('chs vs pk')
+                    //                                 } else if (sqs === 1) {
+                    //                                     console.log('chs vs sq')
+                    //                                 } else {
+                    //                                     console.log('ch vs bb')
+                    //                                 };
+                    //                             };
 
                                         
 
@@ -417,6 +423,10 @@ $(document).ready(function () {
             $('.pikaBtn').text("Thunder Attack");
                $('.pikaBtn').click(function(){
                 
+                if(pika.health > 0){
+
+
+
                let pikaStrike = Math.floor(Math.random() * pika.power );
                 
                charmander.health -= pikaStrike;
@@ -437,8 +447,145 @@ $(document).ready(function () {
                } ,1000)
                $ ('.pikaBtn').on;
 
+
+            } else if (pika.health < 0){
+                $('.instructions').text("loser");
+
+
+            } else{}
+            
+            if (charmander.health < 0 ) {
+                $('.instructions').text("win");
+                char.hide();
+                $('.squirtBtn').on();
+                $('.bulbBtn').on();
+                $('.pikaBtn').off();
+
+                $('.instructions').text("Choose another Opponent")
+                return;
+
+            } else{
+
+            }
+
+
+              
+
                })};
 
+               function pkVsSq(){
+                //    $ ('.pikaBtn').show;
+                //    $('.pikaBtn').text("Thunder Attack");
+                $('.pikaBtn').text("Thunder Attack");
+                   $('.pikaBtn').click(function(){
+                    
+                    if(pika.health > 0){
+    
+    
+    
+                   let pikaStrike = Math.floor(Math.random() * pika.power );
+                    
+                   squirt.health -= pikaStrike;
+                   sHealth.text("Health " + squirt.health);
+                   $ ('.pikaBtn').hide;
+                   $('.instructions').text("Pikachu used Thunder and took " + pikaStrike)
+                   $ ('.pikaBtn').off;
+                   setTimeout(function(){
+                    
+                    
+                
+    
+                    let squirtStrike = Math.floor(Math.random() * squirt.power );
+                    pika.health -= squirtStrike;
+                    pHealth.text("Health " + pika.health);
+                    $('.instructions').text("Squirtle used WaterGun and took " + squirtStrike)
+                    
+                   } ,1000)
+                   $ ('.pikaBtn').on;
+    
+    
+                } else if (pika.health < 0){
+                    $('.instructions').text("loser");
+    
+    
+                } else{}
+                
+                if (squirt.health < 0 ) {
+                    $('.instructions').text("win");
+                    squirtle.hide();
+                    $('.charBtn').on();
+                    $('.bulbBtn').on();
+                    $('.pikaBtn').off();
+                    
+    
+                    $('.instructions').text("Choose another Opponent")
+                    return;
+    
+                } else{
+    
+                }
+    
+    
+                  
+    
+                   })};
+
+
+                   function pkVsBb(){
+                    //    $ ('.pikaBtn').show;
+                    //    $('.pikaBtn').text("Thunder Attack");
+                    $('.pikaBtn').text("Thunder Attack");
+                       $('.pikaBtn').click(function(){
+                        
+                        if(pika.health > 0){
+        
+        
+        
+                       let pikaStrike = Math.floor(Math.random() * pika.power );
+                        
+                       bulbasaur.health -= pikaStrike;
+                       bHealth.text("Health " + bulbasaur.health);
+                       $ ('.pikaBtn').hide;
+                       $('.instructions').text("Pikachu used Thunder and took " + pikaStrike)
+                       $ ('.pikaBtn').off;
+                       setTimeout(function(){
+                        
+                        
+                    
+        
+                        let BulbStrike = Math.floor(Math.random() * bulbasaur.power );
+                        pika.health -= BulbStrike;
+                        pHealth.text("Health " + pika.health);
+                        $('.instructions').text("Bulbasaur used Vine Whip and took " + BulbStrike)
+                        
+                       } ,1000)
+                       $ ('.pikaBtn').on;
+        
+        
+                    } else if (pika.health < 0){
+                        $('.instructions').text("loser");
+        
+        
+                    } else{}
+                    
+                    if (bulbasaur.health < 0 ) {
+                        $('.instructions').text("win");
+                        bulb.hide();
+                        $('.squirtBtn').on();
+                        $('.charBtn').on();
+                        $('.pikaBtn').off();
+        
+                        $('.instructions').text("Choose another Opponent")
+                        return;
+        
+                    } else{
+        
+                    }
+        
+        
+                      
+        
+                       })};
 
            
 

@@ -21,12 +21,7 @@
   </audio>
   <div class="jumbotron">
     <h1 class="display-4">Pokemon RPG</h1>
-    <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
-      information.
-      This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
-      information.
-      This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
-      information.</p>
+    <p>Select a pokemon to start Then select fight me to fight, and try and win!</p>
 
 
   </div>
@@ -34,7 +29,7 @@
     <label class="btn btn-secondary active">
       <input type="radio" name="options" id="option1" autocomplete="off" checked> Play Music
     </label>
-    <label class="btn btn-secondary pause">
+    <label class=" btn-secondary pause">
       <input type="radio" name="options" id="option2" autocomplete="off"> Pause Music
     </label>
 
@@ -43,16 +38,19 @@
   <div class="container">
 
     <h2 class="instructions">Choose your pokemon!</h2>
+    <div class="col-md-6 ">
+      <button id = "start" type="button" class="btn btn-primary btn-lg startBattle ">Start Battle</button>
+    </div>
 
 
-    <div class="pikaDiv col-md-2 character" data-id="pika">
+    <div id= "pika" class="pikaDiv col-md-2 character" data-id="pika">
       <img id="pikaSelect" class="character" data-id="pika"  src="./assets/images/pikaSelect.png">
       <br>
-      <button type="button" class="btn btn-warning pikaBtn">Fight Me!</button>
+      <button id="pikaBtn" type="button" class="btn btn-warning pikaBtn">Fight Me!</button>
       <div style="background: rgb(214, 193, 3);">
         <p>Pikachu</p>
         <P style="color: #fff" class="pikaHealth">" "</P>
-        <p style="color: #fff" class="pikaPower">20</p>
+        <p style="color: #fff" class="pPower">20</p>
       </div>
     </div>
     <br>
@@ -61,13 +59,13 @@
 
 
     <div id="squirtDiv"  class="col-md-2 squirtDiv character" data-id="squirtle">
-      <img id="squirtSelect" class="character" data-id="squirtle"  src="./assets/images/sSelect.png ">
+      <img id="squirtSelect" class="character"  src="./assets/images/sSelect.png ">
       <br>
-      <button type="button" class="btn btn-primary squirtleBtn">Fight me!</button>
+      <button  id="squirtleBtn" type="button" class="btn btn-primary squirtleBtn">Fight me!</button>
       <div style="background: rgb(17, 173, 221);">
         <p>Squirtle</p>
-        <P style="color: #fff" class="squirtHealth">120</P>
-        <p style="color: #fff" class="squirtPower">20</p>
+        <P style="color: #fff" class="sHealth"></P>
+        <p style="color: #fff" class="sPower"></p>
       </div>
 
     </div>
@@ -79,20 +77,18 @@
 
 
 
-    <div class="col-md-6 ">
-      <button type="button" class="btn btn-primary btn-lg startBattle ">Start Battle</button>
-    </div>
+    
 
     <br>
     <div class="col-md-2 charDiv character" data-id="char">
-      <img id="charSelect"  data-id="char" src="./assets/images/CharmanderSelect.png">
+      <img id="charSelect"   src="./assets/images/CharmanderSelect.png">
       <br>
       <button id="charBtn3" type="button" class="btn btn-danger charBtn">Fight me!</button>
 
       <div style="background: red;">
         <p>Charmander</p>
-        <P style="color: #fff" class="charHealth">120</P>
-        <p style="color: #fff" class="charPower">20</p>
+        <P style="color: #fff" class="cHealth"></P>
+        <p style="color: #fff" class="cPower"></p>
       </div>
 
     </div>
@@ -100,13 +96,13 @@
 
 
     <div class="col-md-2 bulbDiv character" data-id="bulb">
-      <img id="bulbSelect"  data-id="bulb"  src="./assets/images/BulbSelect.png">
-      <button type="button" class="btn btn-success bulbBtn">Fight me!</button>
+      <img  id="bulbSelect"    src="./assets/images/BulbSelect.png">
+      <button id="bulbBtn" type="button" class="btn btn-success bulbBtn">Fight me!</button>
       <br>
       <div style="background: rgb(15, 139, 31);">
         <p>Bulbasaur</p>
-        <P style="color: #fff" class="bulbHealth">120</P>
-        <p style="color: #fff" class="bulbPower">20</p>
+        <P style="color: #fff" class="bHealth"></P>
+        <p style="color: #fff" class="bPower"></p>
       </div>
 
       <br>
@@ -122,7 +118,7 @@
 
 
 
-  <script src="assets/javascript/game.js">
+  <script src="game2.js">
 
   </script>
 

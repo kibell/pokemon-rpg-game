@@ -20,11 +20,7 @@ $(document).ready(function () {
     const bulb = $(".bulbDiv");
   
 
-    let pks = 0;
-    let sqs = 0;
-    let chs = 0;
-    let bbs = 0;
-
+    
     // let printToScreen = () => {
     //     charmander.health.text 
     // }
@@ -131,22 +127,58 @@ $(document).ready(function () {
    switch (select){
 
         case 'pika':
+
             console.log("pikaaaa");
+            $('.pikaBtn').addClass('player1');
+            $('.charBtn').addClass('player2')
+            $('.squirtleBtn').addClass('player2')
+            $('.bulbBtn').addClass('player2')
+            $('.pikaBtn').text("THUNDER")
+            $('.charBtn').show();
+            $('.bulbBtn').show();
+           
+            $('.squirtleBtn').show();
             break;
 
         case 'squirtle':
+             
             console.log("squirt");
+            $('.squirtleBtn').addClass('player1');
+            $('.charBtn').addClass('player2')
+            $('.pikaBtn').addClass('player2')
+            $('.bulbBtn').addClass('player2')
+            $('.squirtleBtn').text("WATER GUN")
+            $('.charBtn').show();
+            $('.bulbBtn').show();
+            $('.pikaBtn').show();
+            
             break;
 
         case 'char':
+                
             console.log("char");
+            $('.pikaBtn').addClass('player2')
+            $('.squirtleBtn').addClass('player2')
+            $('.bulbBtn').addClass('player2')
+            $('.charBtn').text("EMBER")
+            $('.charBtn').addClass('player1');
+            $('.bulbBtn').show();
+            $('.pikaBtn').show();
+            $('.squirtleBtn').show();
             break;
 
         case 'bulb':
+            // 
             console.log("bulb");
+            $('.bulbBtn').addClass('player1');
+            $('.charBtn').addClass('player2')
+            $('.squirtleBtn').addClass('player2')
+            $('.pikaBtn').addClass('player2')
+            $('.bulbBtn').text("VINE WHIP")
+            $('.charBtn').show();
+            $('.pikaBtn').show();
+            $('.squirtleBtn').show();
             break;
-
-
 
    }
 
@@ -154,7 +186,230 @@ $(document).ready(function () {
 
     });
 
+   
 
+    $('.btn').on('click', function (){
+        const fight = $(this).attr("id");
+        
+       
+        $(this).css({
+            border: "solid gold"
+
+        });
+        
+
+        
+
+        // setTimeout(function(){
+        //     $('.btn').off('click');
+        // }, 500)
+
+
+        switch (fight){
+
+            case 'squirtleBtn':
+                console.log("yaaayy");
+                $('.startBattle').show();
+                $('.startBattle').on(); 
+                $('.player1').show();
+                $('.player2').hide();
+
+                
+            
+               
+
+               $('.pikaBtn').on('click', function (){
+
+             
+            
+
+                pikastrike = Math.floor(Math.random() * player[0].power +1 );
+        
+                   player[1].health -= pikastrike;
+                   $('.sHealth').text("Health " + player[1].health);
+                  
+                   $('.instructions').text("Pikachu used Thunder and took " + player[0].power)
+//-----------------------------------------------------------------------------------------------
+
+                    setTimeout(function(){
+
+                        sStrike = Math.floor(Math.random() * player[1].power +1 );
+        
+                        player[0].health -= sStrike;
+                        $('.pikaHealth').text("Health " + player[0].health);
+    
+                        $('.instructions').text("Squirtle  used Water Gun and took " + player[1].power)
+                                
+                            }, 1000)
+                        
+
+                            if (player[0].health < 0 ){
+                                $('.instructions').text("You Lost");
+                                confirm("you lost play again?");
+                                location.reload();
+
+                            } else{} ;
+                            
+                            if (player[1].health < 0) {
+                                $('#squirtSelect').hide;
+                            } else {};
+                            
+
+                            
+                       
+                               
+
+                        
+
+                   
+                                
+
+
+
+               });
+
+
+
+
+                
+                 break;
+
+            case 'pikaBtn':
+                    console.log("bbooo")
+                    $('.startBattle').show();
+                    $('.startBattle').on(); 
+                    $('.player1').show();
+                    $('.player2').hide();
+                    break;
+
+             case 'charBtn3':
+                    console.log("chhhooo")
+                    $('.startBattle').show();
+                    $('.startBattle').on(); 
+                    $('.player1').show();
+                    $('.player2').hide();
+                    $('.pikaBtn').on('click', function (){
+                        pikastrike = Math.floor(Math.random() * player[0].power +1 );
+            
+                        player[2].health -= pikastrike;
+                        $('.cHealth').text("Health " + player[2].health);
+                       
+                        $('.instructions').text("Pikachu used Thunder and took " + player[0].power)
+     //-----------------------------------------------------------------------------------------------
+     
+                         setTimeout(function(){
+     
+                             sStrike = Math.floor(Math.random() * player[2].power +1 );
+             
+                             player[0].health -= sStrike;
+                             $('.pikaHealth').text("Health " + player[0].health);
+         
+                             $('.instructions').text("Charmander used Ember and took " + player[2].power)
+                                     
+                                 }, 1000)
+                             
+     
+                                 if (player[0].health < 0 ){
+                                     $('.instructions').text("You Lost");
+                                     confirm("you lost play again?");
+                                     location.reload();
+     
+                                 } else{} ;
+                                 
+                                 if (player[2].health < 0) {
+                                     $('#charSelect').hide;
+                                 } else {};
+                                 
+     
+                                });
+                    
+
+
+
+
+
+
+                    
+                break;
+
+
+             case 'bulbBtn':
+                    console.log("cbooo")
+                    $('.startBattle').show();
+                    $('.startBattle').on(); 
+                    $('.player1').show();
+                    $('.player2').hide();
+
+
+                    $('.pikaBtn').on('click', function (){
+                    pikastrike = Math.floor(Math.random() * player[0].power +1 );
+        
+                    player[3].health -= pikastrike;
+                    $('.bHealth').text("Health " + player[3].health);
+                   
+                    $('.instructions').text("Pikachu used Thunder and took " + player[0].power)
+ //-----------------------------------------------------------------------------------------------
+ 
+                     setTimeout(function(){
+ 
+                         sStrike = Math.floor(Math.random() * player[3].power +1 );
+         
+                         player[0].health -= sStrike;
+                         $('.pikaHealth').text("Health " + player[0].health);
+     
+                         $('.instructions').text("Bulbasaur used Vine Whip and took " + player[3].power)
+                                 
+                             }, 1000)
+                         
+ 
+                             if (player[0].health < 0 ){
+                                 $('.instructions').text("You Lost");
+                                 confirm("you lost play again?");
+                                 location.reload();
+ 
+                             } else{} ;
+                             
+                             if (player[3].health < 0) {
+                                 $('#bulbSelect').hide;
+                             } else {};
+                             
+ 
+                            });
+                        
+                                
+ 
+                         
+ 
+                    
+                                 
+ 
+ 
+ 
+                
+ 
+
+                    
+                    break;
+
+
+        };
+
+
+        
+
+
+
+
+    });
+
+        
+
+
+    
+    
+
+    
+});
    
 
 
@@ -596,4 +851,4 @@ $(document).ready(function () {
                 //* When the defender's `HP` is reduced to zero or below, remove the enemy from the `defender area`. The player character can now choose a new opponent.
 
                 //4. The player wins the game by defeating all enemy characters. The player loses the game the game if their character's `HP` falls to zero or below.
-            });
+            

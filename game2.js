@@ -73,6 +73,10 @@ $(document).ready(function () {
 //         power: 35
 //     }
 
+     $("#squirtSelect").on('click', function () {alert("not available coming soon");  location.reload(); });
+     $("#charSelect").on('click', function () {alert("not available coming soon");  location.reload();});
+    $("#bulbSelect").on('click', function () {alert("not available coming soon");  location.reload();});
+
 
 
     $('.pikaHealth').text("Health " + player[0].health);
@@ -91,13 +95,13 @@ $(document).ready(function () {
     $('.squirtleBtn').hide();
     $('.startBattle').hide();
 
-    // $('.active').on('click', function () {
-    //     audioElement.play();
-    // });
+    $('.active').on('click', function () {
+        audioElement.play();
+    });
 
-    // $('.pause').on('click', function () {
-    // //     audioElement.pause();
-    // });
+    $('.pause').on('click', function () {
+         audioElement.pause();
+    });
 
 
     //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
@@ -190,7 +194,7 @@ $(document).ready(function () {
 
     $('.btn').on('click', function (){
         const fight = $(this).attr("id");
-        
+        audioElement.play();
        
         $(this).css({
             border: "solid gold"

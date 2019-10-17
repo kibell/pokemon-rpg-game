@@ -29,16 +29,20 @@ $(document).ready(function () {
             let chs = 0;
             let bbs = 0;
 
-            let printToScreen = () => {
-                charmander.health.text 
-            }
+            // let printToScreen = () => {
+            //     charmander.health.text 
+            // }
 
-            let pika = {
+
+  
+
+           let  pika = {
                 type: "lighting",
                 health: 130,
-                power: 140
+                power: 40
             }
-            let squirt = {
+
+           let squirt = {
                 type: "water",
                 health: 120,
                 power: 45
@@ -54,7 +58,7 @@ $(document).ready(function () {
                 power: 35
             }
 
-          
+       
 
             pHealth.text("Health " + pika.health);
             sHealth.text("Health " + squirt.health);
@@ -79,134 +83,149 @@ $(document).ready(function () {
                 audioElement.pause();
             });
             //When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
+            $('.character').on('click', function () {
 
-            $("#pikaSelect").on('click', function () {
+               const select =  $(this).attr("data-id")
+               console.log(select);
 
 
-                pikachu.css({
-                    float: "right",
-                    clear: "both"
-                });
-                bulb.css({
-                    float: "left",
-                    clear: "both"
-                });
-                char.css({
-                    float: "left",
-                    clear: "both",
-                });
-                squirtle.css({
-                    float: "left",  
-                    clear: "both"
-                });
-                document.getElementById("pikaSelect").src = "./assets/images/PikaBattle.png";
-                $('.charBtn').show();
-                $('.bulbBtn').show();
-                $('.squirtleBtn').show();
-               
-                //$('.startBattle').show();
-                //document.getElementById("myBtn").disabled = true;
-                //document.getElementById("myBtn").disabled = true;
-                audioPika.play();
-                audioElement.play();
-                pikaStart();
+               $(this).css({
+                float: "right",
+                clear: "both"
+            });
+
             });
 
 
+            // $("#pikaSelect").on('click', function () {
 
 
 
-            $("#squirtSelect").click(function () {
+            //     pikachu.css({
+            //         float: "right",
+            //         clear: "both"
+            //     });
+            //     bulb.css({
+            //         float: "left",
+            //         clear: "both"
+            //     });
+            //     char.css({
+            //         float: "left",
+            //         clear: "both",
+            //     });
+            //     squirtle.css({
+            //         float: "left",  
+            //         clear: "both"
+            //     });
+            //     document.getElementById("pikaSelect").src = "./assets/images/PikaBattle.png";
+            //     $('.charBtn').show();
+            //     $('.bulbBtn').show();
+            //     $('.squirtleBtn').show();
                
-                pikachu.css({
-                    float: "left",
-                    clear: "both"
-                })
-                bulb.css({
-                    float: "left",
-                    clear: "both"
-                });
-                char.css({
-                    float: "left",
-                    clear: "both",
-                });
-                squirtle.css({
-                    float: "right",
-                    clear: "both"
-                });
-                document.getElementById("squirtSelect").src = "./assets/images/SqirtleBattle.png";
-                $('.charBtn').show();
-                $('.bulbBtn').show();
-                $('.pikaBtn').show();
+            //     //$('.startBattle').show();
+            //     //document.getElementById("myBtn").disabled = true;
+            //     //document.getElementById("myBtn").disabled = true;
+            //     audioPika.play();
+            //     audioElement.play();
+            //     pikaStart();
+            // });
+
+
+
+
+
+            // $("#squirtSelect").click(function () {
                
-                $('.startBattle').hide();
-                audioElement.play();
-                squirtStart();
-            });
+            //     pikachu.css({
+            //         float: "left",
+            //         clear: "both"
+            //     })
+            //     bulb.css({
+            //         float: "left",
+            //         clear: "both"
+            //     });
+            //     char.css({
+            //         float: "left",
+            //         clear: "both",
+            //     });
+            //     squirtle.css({
+            //         float: "right",
+            //         clear: "both"
+            //     });
+            //     document.getElementById("squirtSelect").src = "./assets/images/SqirtleBattle.png";
+            //     $('.charBtn').show();
+            //     $('.bulbBtn').show();
+            //     $('.pikaBtn').show();
+               
+            //     $('.startBattle').hide();
+            //     audioElement.play();
+            //     squirtStart();
+            // });
 
 
 
-            $("#charSelect").click(function () {
-                pikachu.css({
-                    float: "left",
-                    clear: "both"
-                })
-                bulb.css({
-                    float: "left",
-                    clear: "both"
-                });
-                char.css({
-                    float: "right",
-                    clear: "both",
-                });
-                squirtle.css({
-                    float: "left",
-                    clear: "both"
-                });
-                document.getElementById("charSelect").src = "./assets/images/CharBattle.png";
-                $('.pikaBtn').hide();
-                $('.bulbBtn').hide();
-                $('.squirtleBtn').hide();
-                $('.charBtn').text("Ember!");
+            // $("#charSelect").click(function () {
+            //     pikachu.css({
+            //         float: "left",
+            //         clear: "both"
+            //     })
+            //     bulb.css({
+            //         float: "left",
+            //         clear: "both"
+            //     });
+            //     char.css({
+            //         float: "right",
+            //         clear: "both",
+            //     });
+            //     squirtle.css({
+            //         float: "left",
+            //         clear: "both"
+            //     });
+            //     document.getElementById("charSelect").src = "./assets/images/CharBattle.png";
+            //     $('.pikaBtn').hide();
+            //     $('.bulbBtn').hide();
+            //     $('.squirtleBtn').hide();
+            //     $('.charBtn').text("Ember!");
                 
-                audioElement.play();
-                $('.pikaBtn').show();
-                $('.bulbBtn').show();
-                $('.squirtleBtn').show();
-                charStart()
+            //     audioElement.play();
+            //     $('.pikaBtn').show();
+            //     $('.bulbBtn').show();
+            //     $('.squirtleBtn').show();
+            //     charStart()
 
-            });
-            $("#bulbSelect").click(function () {
-                pikachu.css({
-                    float: "left",
-                    clear: "both"
-                })
-                bulb.css({
-                    float: "right",
-                    clear: "both"
-                });
-                char.css({
-                    float: "left",
-                    clear: "both",
-                });
-                squirtle.css({
-                    float: "left",
-                    clear: "both"
-                });
-                document.getElementById("bulbSelect").src = "./assets/images/Bulbasaurbattle.png";
-                $('.charBtn').show();
-                $('.pikaBtn').show();
-                $('.squirtleBtn').show();
+            // });
+            // $("#bulbSelect").click(function () {
+            //     pikachu.css({
+            //         float: "left",
+            //         clear: "both"
+            //     })
+            //     bulb.css({
+            //         float: "right",
+            //         clear: "both"
+            //     });
+            //     char.css({
+            //         float: "left",
+            //         clear: "both",
+            //     });
+            //     squirtle.css({
+            //         float: "left",
+            //         clear: "both"
+            //     });
+
+            //     document.getElementById("bulbSelect").src = "./assets/images/Bulbasaurbattle.png";
+            //     $('.charBtn').show();
+            //     $('.pikaBtn').show();
+            //     $('.squirtleBtn').show();
                 
                
-                audioElement.play();
-                bulbStart()
-            });
+            //     audioElement.play();
+            //     bulbStart()
+            // });
 
             function pikaStart(){
                pks ++
                // $('.startBattle').show();
-                console.log(pks, sqs,bbs,chs);
+                //console.log(pks, sqs,bbs,chs);
 
                 $('.startBattle').on("click", function(){
                     
@@ -242,11 +261,11 @@ $(document).ready(function () {
 
             function charStart(){
                  chs ++
-                console.log(pks, sqs,bbs,chs);
+               // console.log(pks, sqs,bbs,chs);
                 // $('.startBattle').show();
                 //console.log('char');
                 $('.startBattle').on("click", function(){
-                    console.log("char");
+                   // console.log("char");
                 });
 
                 $('#bulbSelect').off();
@@ -364,54 +383,66 @@ $(document).ready(function () {
 
                 
                             
-                        break;
+                        break;}
 
-                    //     case 0:
-                    //  switch(sqs){
-
-                    //     case 1:
-                    //             if(pks === 1){
-                    //                 console.log('sq vs pk')
-                    //             } else if (bbs === 1) {
-                    //                 console.log('bb vs sq')
-                    //             } else {
-                    //                 console.log('ch vs sq')
-                    //             };
-                    //             break;
+                        
 
 
-                    //     case 0:
+
+
+
+
+                     switch(sqs){
+
+                        case 1:
+                                if(pks === 1){
+                                    $ ('.squirtleBtn').show();
+                                    console.log('sq vs pk')
+                                } else if (bbs === 1) {
+                                    $ ('.squirtleBtn').show();
+                                    console.log('bb vs sq')
+                                } else {
+                                    $ ('.squirtleBtn').show();
+                                    console.log('ch vs sq')
+                                };
+                                break;
+                            }
+
+                       
                             
-                    //         switch(bbs){
+                            switch(bbs){
 
-                    //             case 1:
-                    //                     if(pks === 1){
-                    //                         console.log('bb vs pk')
-                    //                     } else if (sqs === 1) {
-                    //                         console.log('bb vs sq')
-                    //                     } else {
-                    //                         console.log('ch vs sq')
-                    //                     };
-                    //                     break;
+                                case 1:
+                                        if(pks === 1){
+                                            $('.bulbBtn').show();
+                                            console.log('bb vs pk')
+                                        } else if (sqs === 1) {
+                                            $('.bulbBtn').show();
+                                            console.log('bb vs sq')
+                                        } else {
+                                            $('.bulbBtn').show();
+                                            console.log('ch vs sq')
+                                        };
+                                        break;
+                                    }
+                                
+                         switch(chs){
 
-                    //             case 0:
-                    //                     switch(chs){
-
-                    //                         case 1:
-                    //                                 if(pks === 1){
-                    //                                     console.log('chs vs pk')
-                    //                                 } else if (sqs === 1) {
-                    //                                     console.log('chs vs sq')
-                    //                                 } else {
-                    //                                     console.log('ch vs bb')
-                    //                                 };
-                    //                             };
+                            case 1:
+                                 if(pks === 1){
+                                     console.log('chs vs pk')
+                                     } else if (sqs === 1) {
+                                    console.log('chs vs sq')
+                                    } else {
+                                     console.log('ch vs bb')
+                                                };
+                                 };
 
                                         
 
                                 
                              
-                   }}};
+                   
 
 
 
@@ -435,10 +466,7 @@ $(document).ready(function () {
                $('.instructions').text("Pikachu used Thunder and took " + pikaStrike)
                $ ('.pikaBtn').off;
                setTimeout(function(){
-                
-                
-            
-
+             
                 let CharStrike = Math.floor(Math.random() * charmander.power );
                 pika.health -= CharStrike;
                 pHealth.text("Health " + pika.health);
@@ -449,7 +477,7 @@ $(document).ready(function () {
 
 
             } else if (pika.health < 0){
-                $('.instructions').text("loser");
+                $('.instructions').text("YOU LOST! PLAY AGAIN?");
 
 
             } else{}

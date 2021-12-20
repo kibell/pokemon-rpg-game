@@ -54,6 +54,33 @@ $(document).ready(function () {
       "1",
       "./assets/images/SqirtleBattle.png"
     )),
+    (Bulbasaur = new Pokemon(
+        "Bulbasaur",
+        "Leaf",
+        150,
+        35,
+        "Razor Leaf",
+        "Vine Whip",
+        "Bite",
+        "Leech Seed",
+        "./assets/images/BulbSelect.png",
+        "1",
+        "./assets/images/BulbasaurBattle.png"
+      )),
+
+      (Bulbasaur = new Pokemon(
+        "Charmander",
+        "Fire",
+        160,
+        45,
+        "Ember",
+        "Fire spin",
+        "Scratch",
+        "Bite",
+        "./assets/images/CharmanderSelect.png",
+        "1",
+        "./assets/images/CharBattle.png"
+      )),
   ];
 
   let health = 0;

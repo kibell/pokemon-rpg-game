@@ -42,6 +42,7 @@ width: 150px;
 border-style: solid;
 border-color: #cb4439;
 border-width: 10px;
+height: 35em;
 
 }
 .lowStart{
@@ -56,6 +57,13 @@ text-align: center;
 .playAgain{
     display: none;
 }
+
+.displayHealth, .displayOppHealth{
+
+    font-size: 25px;
+
+}
+
 .butContain{
     margin: auto;
   width: 50%;

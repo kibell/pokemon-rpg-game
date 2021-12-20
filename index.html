@@ -86,11 +86,18 @@
 
 
       <div class="jumbotron board lowStart" id="lowStart" style="background: #679e9b;">
+        <p class="display-4 instructions" style="text-align: center;" >Pokemon RPG</p>
         <img class="pokeBatImg" id="pokeBatImg" style="float: left;" src="./assets/images/pikaSelect.png" />
-        <p style="float: left;" class="displayHealth">0</p>
-          <img class="oppBatImg" id="oppBatImg" style="float: right;"src="./assets/images/pikaSelect.png" />
-        <p style="text-align: right;" class="displayOppHealth">0</p>
-        <h3 class="display-4 instructions" style="text-align: center;" >Pokemon RPG</h3>
+        <p class="displayHealth" style="clear: left;">0</p>
+        <div class="progress" style="width: 8rem; float: left; clear: both;" >
+          <div class="progress-bar" id="myprogress-bar" role="progressbar" style="width:100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+          <img class="oppBatImg" id="oppBatImg" src="./assets/images/pikaSelect.png" style="float: right; clear: left;"/>
+        <p style="float: right; clear: right;" class="displayOppHealth">0</p>
+        <div class="progress" style="width: 8rem; float: right; clear: both;">
+          <div class="progress-bar" id="oppprogress-bar" role="progressbar" style="width:100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        
         <div class="butContain"style="justify-content:center;">
         <button class="moveSet1 btn btn-warning"> Thunder </button>
           <button class="moveSet2 btn btn-warning">Growl </button>

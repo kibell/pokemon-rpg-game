@@ -55,48 +55,40 @@ $(document).ready(function () {
       "./assets/images/SqirtleBattle.png"
     )),
     (Bulbasaur = new Pokemon(
-        "Bulbasaur",
-        "Leaf",
-        150,
-        35,
-        "Razor Leaf",
-        "Vine Whip",
-        "Bite",
-        "Leech Seed",
-        "./assets/images/BulbSelect.png",
-        "1",
-        "./assets/images/BulbasaurBattle.png"
-      )),
-
-      (charmander = new Pokemon(
-        "Charmander",
-        "Fire",
-        160,
-        45,
-        "Ember",
-        "Fire spin",
-        "Scratch",
-        "Bite",
-        "./assets/images/CharmanderSelect.png",
-        "1",
-        "./assets/images/CharBattle.png"
-      )),
+      "Bulbasaur",
+      "Leaf",
+      150,
+      35,
+      "Razor Leaf",
+      "Vine Whip",
+      "Bite",
+      "Leech Seed",
+      "./assets/images/BulbSelect.png",
+      "1",
+      "./assets/images/BulbasaurBattle.png"
+    )),
+    (charmander = new Pokemon(
+      "Charmander",
+      "Fire",
+      160,
+      45,
+      "Ember",
+      "Fire spin",
+      "Scratch",
+      "Bite",
+      "./assets/images/CharmanderSelect.png",
+      "1",
+      "./assets/images/CharBattle.png"
+    )),
   ];
+
+
 
   let health = 0;
   let oppHealth = 0;
   let numbSel = 0;
   let randSel = Charas.length - 1;
-  $("#charSelect").append(
-    "<div class='charasDiv'>" +
-      "<p class='pokeName'>" +
-      Charas[numbSel].pokeName +
-      "</p>" +
-      "<img class='pokeImg' src=" +
-      Charas[numbSel].img +
-      ">" +
-      "</div>"
-  );
+
 
   $(".rightClick").on("click", function () {
     console.log("hello");
@@ -159,10 +151,14 @@ $(document).ready(function () {
     $(".moveSet3").text(Charas[numbSel].move3);
     $(".moveSet4").text(Charas[numbSel].move4);
     $(".opppokeImg").attr("src", Charas[randSel].img);
-    $(".displayHealth").text("My "+Charas[numbSel].pokeName+ " Health: " +Charas[numbSel].health);
-    $(".displayOppHealth").text("Enemy " + Charas[randSel].pokeName + " Health: "+  Charas[randSel].health);
-    $(".oppdisplayName").text(Charas[randSel].pokeName)
-   $('.oppdisplayType').text("Type: " + Charas[randSel].type)
+    $(".displayHealth").text(
+      "My " + Charas[numbSel].pokeName + " Health: " + Charas[numbSel].health
+    );
+    $(".displayOppHealth").text(
+      "Enemy " + Charas[randSel].pokeName + " Health: " + Charas[randSel].health
+    );
+    $(".oppdisplayName").text(Charas[randSel].pokeName);
+    $(".oppdisplayType").text("Type: " + Charas[randSel].type);
     $(".oppmoveSet1").text(Charas[randSel].move1);
     $(".oppmoveSet2").text(Charas[randSel].move2);
     $(".oppmoveSet3").text(Charas[randSel].move3);
@@ -186,6 +182,11 @@ $(document).ready(function () {
     oppHealth = oppHealth - moveSet1;
     health = health - oppMoveSet1;
 
+    let progress = (health / Charas[numbSel].health) * 100;
+    let oppprogress = (health / Charas[randSel].health) * 100;
+    document.getElementById("myprogress-bar").style.width = progress + "%";
+    document.getElementById("oppprogress-bar").style.width = oppprogress + "%";
+
     $(".instructions").text(
       Charas[numbSel].pokeName +
         " used " +
@@ -196,12 +197,14 @@ $(document).ready(function () {
         moveSet1 +
         " Damage"
     );
-    $(".displayOppHealth").text("Enemy Health:" + oppHealth);
+    $(".displayOppHealth").text(
+      "Enemy Health:" + oppHealth + "/" + Charas[randSel].health
+    );
 
     // setTimeout(function(){
     //     $(".instructions").text(Charas[randSel].pokeName + " used " + Charas[randSel].move1 + " on " + Charas[numbSel].pokeName + "it did " + oppMoveSet1 + " damage")
     //     $(".displayHealth").text(health)
-    // },3000)
+    // },500)
 
     if (health >= 1 && oppHealth >= 1) {
       setTimeout(function () {
@@ -215,17 +218,18 @@ $(document).ready(function () {
             oppMoveSet1 +
             " damage"
         );
-        $(".displayHealth").text("My Health: " + health);
-      }, 3000);
+        $(".displayHealth").text(
+          "My Health: " + health + "/" + Charas[numbSel].health
+        );
+      }, 500);
     } else if (health <= 0 && oppHealth > 0) {
       console.log("you lose");
-      alert("you Lose")
-      document.getElementById("playAgain").style.display = "block"
+      $(".instructions").text("You Lost! Play again?");
+      document.getElementById("playAgain").style.display = "block";
     } else if (health > 0 && oppHealth <= 0) {
       console.log("you win");
-      alert("you Win")
-      document.getElementById("playAgain").style.display = "block"
-
+      $(".instructions").text("You Won! Play again?");
+      document.getElementById("playAgain").style.display = "block";
     }
     return oppHealth, health;
   });
@@ -246,12 +250,14 @@ $(document).ready(function () {
         moveSet1 +
         " Damage"
     );
-    $(".displayOppHealth").text("Enemy Health:" + oppHealth);
+    $(".displayOppHealth").text(
+      "Enemy Health:" + oppHealth + "/" + Charas[randSel].health
+    );
 
     // setTimeout(function(){
     //     $(".instructions").text(Charas[randSel].pokeName + " used " + Charas[randSel].move1 + " on " + Charas[numbSel].pokeName + "it did " + oppMoveSet1 + " damage")
     //     $(".displayHealth").text(health)
-    // },3000)
+    // },500)
 
     if (health >= 1 && oppHealth >= 1) {
       setTimeout(function () {
@@ -265,18 +271,19 @@ $(document).ready(function () {
             oppMoveSet1 +
             " damage"
         );
-        $(".displayHealth").text("My Health: " + health);
-      }, 3000);
+        $(".displayHealth").text(
+          "My Health: " + health + "/" + Charas[numbSel].health
+        );
+      }, 500);
     } else if (health <= 0 && oppHealth > 0) {
       console.log("you lose");
-      alert("you Lose")
-      document.getElementById("playAgain").style.display = "block"
+      $(".instructions").text("You Lost! Play again?");
 
+      document.getElementById("playAgain").style.display = "block";
     } else if (health > 0 && oppHealth <= 0) {
       console.log("you win");
-      alert("you Win")
-      document.getElementById("playAgain").style.display = "block"
-
+      $(".instructions").text("You Won! Play again?");
+      document.getElementById("playAgain").style.display = "block";
     }
     return oppHealth, health;
   });
@@ -297,12 +304,14 @@ $(document).ready(function () {
         moveSet1 +
         " Damage"
     );
-    $(".displayOppHealth").text("Enemy Health:" + oppHealth);;
+    $(".displayOppHealth").text(
+      "Enemy Health:" + oppHealth + "/" + Charas[randSel].health
+    );
 
     // setTimeout(function(){
     //     $(".instructions").text(Charas[randSel].pokeName + " used " + Charas[randSel].move1 + " on " + Charas[numbSel].pokeName + "it did " + oppMoveSet1 + " damage")
     //     $(".displayHealth").text(health)
-    // },3000)
+    // },500)
 
     if (health >= 1 && oppHealth >= 1) {
       setTimeout(function () {
@@ -316,18 +325,19 @@ $(document).ready(function () {
             oppMoveSet1 +
             " damage"
         );
-        $(".displayHealth").text("My Health: " + health);
-      }, 3000);
+        $(".displayHealth").text(
+          "My Health: " + health + "/" + Charas[numbSel].health
+        );
+      }, 500);
     } else if (health <= 0 && oppHealth > 0) {
       console.log("you lose");
-      alert("you Lose")
-      document.getElementById("playAgain").style.display = "block"
+      $(".instructions").text("You Lost! Play again?");
 
+      document.getElementById("playAgain").style.display = "block";
     } else if (health > 0 && oppHealth <= 0) {
       console.log("you win");
-      alert("you Win")
-      document.getElementById("playAgain").style.display = "block"
-
+      $(".instructions").text("You Won! Play again?");
+      document.getElementById("playAgain").style.display = "block";
     }
     return oppHealth, health;
   });
@@ -348,12 +358,14 @@ $(document).ready(function () {
         moveSet1 +
         " Damage"
     );
-    $(".displayOppHealth").text("Enemy Health:" + oppHealth);;
+    $(".displayOppHealth").text(
+      "Enemy Health:" + oppHealth + "/" + Charas[randSel].health
+    );
 
     // setTimeout(function(){
     //     $(".instructions").text(Charas[randSel].pokeName + " used " + Charas[randSel].move1 + " on " + Charas[numbSel].pokeName + "it did " + oppMoveSet1 + " damage")
     //     $(".displayHealth").text(health)
-    // },3000)
+    // },500)
 
     if (health >= 1 && oppHealth >= 1) {
       setTimeout(function () {
@@ -367,18 +379,20 @@ $(document).ready(function () {
             oppMoveSet1 +
             " damage"
         );
-        $(".displayHealth").text("My Health: " + health);;
-      }, 3000);
+        $(".displayHealth").text(
+          "My Health: " + health + "/" + Charas[numbSel].health
+        );
+      }, 500);
     } else if (health <= 0 && oppHealth > 0) {
       console.log("you lose");
-      alert("you Lose")
-      document.getElementById("playAgain").style.display = "block"
+      $(".instructions").text("You Lost! Play again?");
 
+      document.getElementById("playAgain").style.display = "block";
     } else if (health > 0 && oppHealth <= 0) {
       console.log("you win");
-      alert("you Win")
-      document.getElementById("playAgain").style.display = "block"
+      $(".instructions").text("You Won! Play again?");
 
+      document.getElementById("playAgain").style.display = "block";
     }
     return oppHealth, health;
   });

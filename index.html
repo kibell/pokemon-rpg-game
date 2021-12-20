@@ -22,13 +22,7 @@
 
   <body>
    
-    <div class="jumbotron">
-      <h1 class="display-4 instructions">Pokemon RPG</h1>
-      <p class="displayHealth">0</p>
-      <p class="displayOppHealth">0</p>
-        
-      </p>
-    </div>
+  
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
       
       
@@ -47,7 +41,7 @@
 
       <div class="row">
         <div class="col-4-md">
-          <button class="chosebtn" id='chosebtn'>I Choose You</button>
+          <button class="chosebtn btn-danger" id='chosebtn'>I Choose You</button>
           <h6 class="displayName">Pikachu</h6>
           <h6 class="displayType">Type: Thunder</h6>
           <h6>Moves</h6>
@@ -65,12 +59,12 @@
 
           <!----battle sprite------------>
         <div class="col-md-3">
-          <img class="pokeBatImg" id="pokeBatImg" src="./assets/images/pikaSelect.png" />
+         
         </div>
 
         <!--Opponent space--------------------------->
         <div class="col-md-3">
-          <img class="oppBatImg" id="oppBatImg" src="./assets/images/pikaSelect.png" />
+          <!-- <img class="oppBatImg" id="oppBatImg" src="./assets/images/pikaSelect.png" /> -->
         </div>
       
 
@@ -90,7 +84,25 @@
       </div>
       </div>  
 
-      <div class="row" style="text-align: center;">
+
+      <div class="jumbotron board lowStart" id="lowStart" style="background: #679e9b;">
+        <img class="pokeBatImg" id="pokeBatImg" style="float: left;" src="./assets/images/pikaSelect.png" />
+        <p style="float: left;" class="displayHealth">0</p>
+          <img class="oppBatImg" id="oppBatImg" style="float: right;"src="./assets/images/pikaSelect.png" />
+        <p style="text-align: right;" class="displayOppHealth">0</p>
+        <h3 class="display-4 instructions" style="text-align: center;" >Pokemon RPG</h3>
+        <div class="butContain"style="justify-content:center;">
+        <button class="moveSet1 btn btn-warning"> Thunder </button>
+          <button class="moveSet2 btn btn-warning">Growl </button>
+          <button class="moveSet3 btn btn-warning"> Snap </button>
+          <button class="moveSet4 btn btn-warning">Grapple </button>
+
+          <button class="btn-primary playAgain">Play Again?</button>
+        
+        
+      </div>
+      </div>
+      <!-- <div class="row" style="text-align: center;">
         <div class="col-md-12 lowStart" id="lowStart">
         <h5 class=health>Health: 140</h5>
         <button class="moveSet1"> Thunder </button>
@@ -98,7 +110,7 @@
         <button class="moveSet3"> Snap </button>
         <button class="moveSet4">Grapple </button>
       </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- <div id= "oponenet1" class="opoDiv col-md-2 character" data-id="pika">

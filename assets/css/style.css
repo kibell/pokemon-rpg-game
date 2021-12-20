@@ -38,13 +38,27 @@ width: 150px;
     display: none;
 }
 
+.board{
+border-style: solid;
+border-color: #cb4439;
+border-width: 10px;
 
+}
 .lowStart{
     display: none;
 }
 .pokeName{
 text-align: center;
 
+}
+
+
+.playAgain{
+    display: none;
+}
+.butContain{
+    margin: auto;
+  width: 50%;
 }
 
 h2{

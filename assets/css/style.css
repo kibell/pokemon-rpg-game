@@ -2,7 +2,50 @@ body{
      background: linear-gradient(to right, #44aaa5,#223344 ) 
     
 }
+.charasDiv{
+    display: grid;
+}
+.rightClick{
 
+    float: right ;
+}
+
+.chosebtn{
+    align-items: center;
+}
+.pokeImg{
+margin: auto;
+width: 150px;
+}
+.opppokeImg{
+
+    margin: auto;
+    width: 150px; 
+}
+
+.pokeBatImg{
+    display: none;
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.oppBatImg{
+    float: right;
+    display: none;
+}
+
+.oppStart{
+    display: none;
+}
+
+
+.lowStart{
+    display: none;
+}
+.pokeName{
+text-align: center;
+
+}
 
 h2{
     text-align: center;
@@ -33,11 +76,7 @@ img{
    
 }
 
-#charSelect:hover{
-    background: orange;
-    border-radius: 50%;
-    
-}
+
 
 #bulbSelect:hover{
     background: yellowgreen;

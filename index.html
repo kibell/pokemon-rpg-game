@@ -1,50 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pokemon RPG</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/814d9b1ed3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pokemon RPG</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<body>
-  <audio id="myaudio">
-    <source src="sounds/101-opening.mp3">
-  </audio>
-  <audio id="audiopika">
-    <source src="sounds/025 - Kanto - Pikachu.mp3">
-  </audio>
-  <div class="jumbotron">
-    <h1 class="display-4">Pokemon RPG</h1>
-    <p>Select a pokemon to start Then select fight me to fight, and try and win!</p>
-
-
-  </div>
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="radio" name="options" id="option1" autocomplete="off" checked> Play Music
-    </label>
-    <label class=" btn-secondary pause">
-      <input type="radio" name="options" id="option2" autocomplete="off"> Pause Music
-    </label>
-
-  </div>
-
-  <div class="container">
-
-    <h2 class="instructions">Choose your pokemon!</h2>
-    <div class="col-md-6 ">
-      <button id = "start" type="button" class="btn btn-primary btn-lg startBattle ">Start Battle</button>
+  <body>
+   
+    <div class="jumbotron">
+      <h1 class="display-4 instructions">Pokemon RPG</h1>
+      <p class="displayHealth">0</p>
+      <p class="displayOppHealth">0</p>
+        
+      </p>
+    </div>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      
+      
     </div>
 
+    <div class="container">
+      
+      <!-- <div class="col-md-6 ">x
+      <button id = "start" type="button" class="btn btn-primary btn-lg startBattle ">Start Battle</button>
+    </div> -->
 
-    <div id= "pika" class="pikaDiv col-md-2 character" data-id="pika">
-      <img id="pikaSelect" class="character" data-id="pika"  src="./assets/images/pikaSelect.png">
+      <div class="row">
+        <i class="fas fa-long-arrow-alt-left fa-5x leftClick" id="faslong"></i>
+        <i class="fas fa-long-arrow-alt-right fa-5x rightClick" id="fasRight"></i>
+      </div>
+
+      <div class="row">
+        <div class="col-4-md">
+          <button class="chosebtn" id='chosebtn'>I Choose You</button>
+          <h6 class="displayName">Pikachu</h6>
+          <h6 class="displayType">Type: Thunder</h6>
+          <h6>Moves</h6>
+          <ol>
+            <li class="moveSet1">Thunder Bolt</li>
+            <li class="moveSet2">Quick Attack</li>
+            <li class="moveSet3">Shock</li>
+            <li class="moveSet4">Growl</li>
+          </ol>
+
+          <img class="pokeImg" src="./assets/images/pikaSelect.png" />
+        </div>
+        <!-- <div id= "charSelect" class="charDiv col-md-12" data-id="char">  -->
+
+
+          <!----battle sprite------------>
+        <div class="col-md-3">
+          <img class="pokeBatImg" id="pokeBatImg" src="./assets/images/pikaSelect.png" />
+        </div>
+
+        <!--Opponent space--------------------------->
+        <div class="col-md-3">
+          <img class="oppBatImg" id="oppBatImg" src="./assets/images/pikaSelect.png" />
+        </div>
+      
+
+      <div class="col-md-4 oppStart" id="oppStart" style="float: right;">
+        <!-- <button class="chosebtn" id='chosebtn'>I Choose You</button> -->
+        <h6 class="oppdisplayName">Pikachu</h6>
+        <h6 class="oppdisplayType">Type: Thunder</h6>
+        <h6>Moves</h6>
+        <ol>
+          <li class="oppmoveSet1">Thunder Bolt</li>
+          <li class="oppmoveSet2">Quick Attack</li>
+          <li class="oppmoveSet3">Shock</li>
+          <li class="oppmoveSet4">Growl</li>
+        </ol>
+
+        <img class="opppokeImg" src="./assets/images/pikaSelect.png" />
+      </div>
+      </div>  
+
+      <div class="row" style="text-align: center;">
+        <div class="col-md-12 lowStart" id="lowStart">
+        <h5 class=health>Health: 140</h5>
+        <button class="moveSet1"> Thunder </button>
+        <button class="moveSet2">Growl </button>
+        <button class="moveSet3"> Snap </button>
+        <button class="moveSet4">Grapple </button>
+      </div>
+      </div>
+    </div>
+
+    <!-- <div id= "oponenet1" class="opoDiv col-md-2 character" data-id="pika">
+      <img id="oponentSelect" class="character" data-id="pika"  src="">
       <br>
       <button id="pikaBtn" type="button" class="btn btn-warning pikaBtn">Fight Me!</button>
       <div style="background: rgb(214, 193, 3);">
@@ -52,13 +110,9 @@
         <P style="color: #fff" class="pikaHealth">" "</P>
         <p style="color: #fff" class="pPower">20</p>
       </div>
-    </div>
-    <br>
+    </div> -->
 
-
-
-
-    <div id="squirtDiv"  class="col-md-2 squirtDiv character" data-id="squirtle">
+    <!-- <div id="squirtDiv"  class="col-md-2 squirtDiv character" data-id="squirtle">
       <img id="squirtSelect" class="character"  src="./assets/images/sSelect.png ">
       <br>
       <button  id="squirtleBtn" type="button" class="btn btn-primary squirtleBtn">Fight me!</button>
@@ -107,32 +161,24 @@
 
       <br>
     </div>
-  </div>
+  </div> -->
 
+    <script src="game.js"></script>
 
-
-
-
-
-
-
-
-
-  <script src="game2.js">
-
-  </script>
-
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -176,16 +176,24 @@ $(document).ready(function () {
     console.log(oppHealth);
   });
 
-  $(".moveSet1").on("click", function () {
-    moveSet1 = Math.floor(Math.random() * Charas[numbSel].power + 1);
-    oppMoveSet1 = Math.floor(Math.random() * Charas[randSel].power + 1);
-    oppHealth = oppHealth - moveSet1;
-    health = health - oppMoveSet1;
+ 
+  
 
+  $(".moveSet1").on("click", function () {
+   
+    let moveSet1 = Math.floor(Math.random() * Charas[numbSel].power + 1);
+    let oppMoveSet1 = Math.floor(Math.random() * Charas[randSel].power + 1);
+     oppHealth = oppHealth - moveSet1;
+    health = health - oppMoveSet1;
     let progress = (health / Charas[numbSel].health) * 100;
     let oppprogress = (health / Charas[randSel].health) * 100;
+   
+    if(progress <= 0){
+        document.getElementById("myprogress-bar").style.width = "0%";
+    }
     document.getElementById("myprogress-bar").style.width = progress + "%";
     document.getElementById("oppprogress-bar").style.width = oppprogress + "%";
+    
 
     $(".instructions").text(
       Charas[numbSel].pokeName +
@@ -197,6 +205,7 @@ $(document).ready(function () {
         moveSet1 +
         " Damage"
     );
+
     $(".displayOppHealth").text(
       "Enemy Health:" + oppHealth + "/" + Charas[randSel].health
     );
